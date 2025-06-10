@@ -3,13 +3,17 @@
     --secondary-color: white;
 }
 
+* {
+    scroll-behavior: smooth;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     width: 98%;
-    height: 100vh;
+    height: auto;
     margin: 2px;
     padding: 0;
-    border: 2px double white;
-    border-bottom: none;
     background: linear-gradient(to right, rgb(56, 75, 224), rgba(6, 203, 238, 0.548), rgb(56, 75, 224));
 }
 
@@ -20,7 +24,7 @@ header {
         "h1 img"
         "nav nav";
     justify-content: space-between;
-    width: 100%;
+    width: 98%;
     height: 200px;
     background: radial-gradient(rgba(8, 74, 216, 0.884), rgb(101, 142, 231));
     border: 2px black;
@@ -28,6 +32,7 @@ header {
     box-shadow: 0.2rem 0.4rem 20px white;
     border-radius: 0.7rem;
     margin: 5px;
+    align-self: center;
 }
 
 header h1 {
@@ -103,26 +108,36 @@ header nav ul li a:hover {
     color: black;
 }
 
+#main {
+    margin: 0;
+    align-self: center;
+    width: 98%;
+    border: 2px black solid;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
 #hero {
     font-style: italic;
-    width: 100%;
+    width: 98%;
     height: auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: center;
-    border: 2px black solid;
-    border-radius: 1rem;
     margin: 5px;
 }
 
 #hero section{
-    margin-left: 3rem;
-    border-radius: 1rem;
-    padding: 3rem;
+    width: 98%;
+    margin: 2rem;
     background-size: 60rem;
     color: white;
-    text-shadow: 0.3rem 0.5rem 1rem black;
+    text-shadow: 3px 5px 10px black;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 
@@ -139,8 +154,6 @@ header nav ul li a:hover {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 5px;
-    border: 2px black solid;
-    border-radius: 1rem;
     margin: 5px;
     font-style: oblique;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -184,6 +197,8 @@ header nav ul li a:hover {
 }
 
 footer {
+    align-self: center;
+    width: 98%;
     display: flex;
     flex-direction: column;
     bottom: 0;
@@ -227,7 +242,7 @@ footer ul a:hover {
 
 
 footer p {
-    align-self: end;
+    align-self: center;
 }
 
 footer li {
@@ -240,15 +255,121 @@ footer li {
 
 footer li img {
     width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 0;
+        border: none;
+    }
+
+    header {
+        height: 180px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    header h1{
+        font-size: 20px;
+        grid-area: h1;
+        width: 80%;
+    }
+
+    header img {
+        width: 3rem;
+        justify-self: center;
+    }
+
+    header nav ul{
+        column-gap: 10px;
+        margin: 0;
+        margin-top: 5px;
+        align-self: flex-start;
+    }
+
+    header nav {
+        width: 98%;
+        padding: 0;
+    }
+
+    header nav ul li a {
+        font-size: 0.8rem;
+    }
+
+    #hero {
+        grid-template-columns: 1fr;
+        box-sizing: border-box;
+    }
+
+    #hero section {
+        margin: 0;
+        padding: 0rem;
+        text-align: center;
+        font-size: 1.2rem;
+        
+    }
+
+    #hero img {
+        width: 15rem;
+    }
+    
+    #section-meet-santiago {
+        grid-template-columns: 1fr;
+        gap: 0;
+        font-size: 1.2rem;
+        width: 98%;
+    }
+
+    #section-home {
+        width: 90%;
+        padding: 15px;
+    }
 }
 
 @media (max-width: 768px) {
     header {
+        height: 180px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    header h1{
+        font-size: 30px;
+        grid-area: h1;
+        width: 80%;
+    }
+
+    header nav ul{
+        column-gap: 10px;
+        margin: 0;
+        margin-top: 5px;
+        align-self: flex-start;
+    }
+
+    #hero {
+        grid-template-columns: 1fr;
+        box-sizing: border-box;
+    }
+
+    #hero section {
+        margin: 0;
+        padding: 0rem;
+        text-align: center;
+        font-size: 1.1rem;
         display: flex;
-        flex-direction: column;
-        height: auto;
-        align-items: center;
-        flex-wrap: wrap;
-        height: auto;
+        justify-content: center;
+    }
+
+    #hero img {
+        width: 19rem;
+    }
+
+    #section-meet-santiago {
+        grid-template-columns: 1fr;
+        gap: 0;
+        font-size: 0.9rem;
+        width: 98%;
     }
 }
